@@ -127,9 +127,12 @@ if ( ! is_paged() && $uk_hero ) :
 
 endif;
 
-/* The six pillars as topic tiles (parent block; covers fall back gracefully pre-content). */
+/* The six pillars as topic tiles (parent block; covers fall back gracefully pre-content).
+   Wrapped in #explore: the brand hero's "Explore the topics" button anchors here. */
 if ( function_exists( 'vr_showcase_categories' ) ) {
+	echo '<div id="explore">';
 	vr_showcase_categories( 6 );
+	echo '</div>';
 }
 ?>
 
