@@ -1,1 +1,179 @@
-{"assets":{"icon":"storyline-uk-icon","social_cover":"storyline-uk-og","wordmark":"storyline-uk-logo"},"brand":{"description":"UK entertainment news: movie news, TV news, streaming charts and launches, celebrity news, features and lists, and trailers & videos — UK release dates, UK availability and UK broadcast times, in British English.","name":"Storyline UK","site_email":"daseknahri@gmail.com","social":{"facebook":"","instagram":"","tiktok":"","x":"","youtube":""},"tagline":"Movies · TV · Streaming · Celebrity"},"categories":[{"description":"Movie news for UK readers: casting, release dates, trailers and box office — the films everyone will be talking about.","name":"Movie News","slug":"movie-news"},{"description":"TV news: renewals, cancellations, casting and finale coverage from the shows Britain is watching.","name":"TV News","slug":"tv-news"},{"description":"What is new and what is number one on Netflix, Prime Video, Disney+ and more — streaming news and the weekly charts.","name":"Streaming","slug":"streaming"},{"description":"Celebrity news, reported carefully: confirmed stories about the stars of film and TV — rumours labelled as rumours.","name":"Celebrity News","slug":"celebrity-news"},{"description":"Features, explainers and ranked lists — the best films and shows, endings explained, and the stories behind the stories.","name":"Features & Lists","slug":"features-lists"},{"description":"The latest trailers and videos, with the context that matters — what is coming, when, and why everyone is watching.","name":"Trailers & Videos","slug":"trailers-videos"}],"hubs":{"curation":[{"name":"Popular","slug":"popular"},{"name":"Trending","slug":"trending"}],"franchises":[{"name":"Marvel","slug":"marvel"},{"name":"DC","slug":"dc"},{"name":"Star Wars","slug":"star-wars"},{"name":"Star Trek","slug":"star-trek"},{"name":"Doctor Who","slug":"doctor-who"},{"name":"Harry Potter","slug":"harry-potter"},{"name":"The Lord of the Rings","slug":"lord-of-the-rings"},{"name":"James Bond","slug":"james-bond"}],"platforms":[{"name":"Netflix","slug":"netflix"},{"name":"Prime Video","slug":"prime-video"},{"name":"Disney+","slug":"disney-plus"},{"name":"Apple TV+","slug":"apple-tv-plus"},{"name":"Paramount+","slug":"paramount-plus"},{"name":"NOW","slug":"now-tv"},{"name":"BBC iPlayer","slug":"bbc-iplayer"},{"name":"ITVX","slug":"itvx"}]},"locales":{"admin":"en_US","force_admin":true,"public":"en_GB"},"nav":{"primary_categories":6},"slugs":{"about":"about","contact":"contact","cookies":"cookie-policy","corrections":"corrections","editorial":"editorial-policy","privacy":"privacy-policy","terms":"terms"},"writer":{"bio":"Storyline UK is written by UK entertainment writers and lifelong fans: film and TV journalists who follow the release calendars, the streaming charts and the award races — and who always label a rumour as a rumour.","email":"daseknahri@gmail.com","name":"Storyline UK Team","photo":"storyline-uk-icon.png","social":{"facebook":"","instagram":"","tiktok":"","x":"","youtube":""}}}
+{
+  "_facts": {
+    "category_ids": {
+      "celebrity-news": 5,
+      "features-lists": 6,
+      "general": 1,
+      "movie-news": 2,
+      "streaming": 4,
+      "trailers-videos": 7,
+      "tv-news": 3
+    },
+    "default_category_id": 2,
+    "hub_tags_seeded": 18,
+    "local_url": "http://localhost:8097",
+    "qa": "2026-11-06 local compose QA PASS: home + 6 category archives + 7 trust pages all 200; ads.txt exact; homepage JSON-LD present and parses; storyline-uk 1.0.0 active on viral-reader 1.9.37; build-v9 9.48.0; Europe/London; en_GB; seed log clean; 0 posts (nothing invented)",
+    "seeded_locally": "2026-11-06",
+    "trust_pages": 7
+  },
+  "assets": {
+    "icon": "storyline-uk-icon",
+    "social_cover": "storyline-uk-og",
+    "wordmark": "storyline-uk-logo"
+  },
+  "brand": {
+    "description": "UK entertainment news: movie news, TV news, streaming charts and launches, celebrity news, features and lists, and trailers & videos — UK release dates, UK availability and UK broadcast times, in British English.",
+    "name": "Storyline UK",
+    "site_email": "daseknahri@gmail.com",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "tiktok": "",
+      "x": "",
+      "youtube": ""
+    },
+    "tagline": "Movies · TV · Streaming · Celebrity"
+  },
+  "categories": [
+    {
+      "description": "Movie news for UK readers: casting, release dates, trailers and box office — the films everyone will be talking about.",
+      "name": "Movie News",
+      "slug": "movie-news"
+    },
+    {
+      "description": "TV news: renewals, cancellations, casting and finale coverage from the shows Britain is watching.",
+      "name": "TV News",
+      "slug": "tv-news"
+    },
+    {
+      "description": "What is new and what is number one on Netflix, Prime Video, Disney+ and more — streaming news and the weekly charts.",
+      "name": "Streaming",
+      "slug": "streaming"
+    },
+    {
+      "description": "Celebrity news, reported carefully: confirmed stories about the stars of film and TV — rumours labelled as rumours.",
+      "name": "Celebrity News",
+      "slug": "celebrity-news"
+    },
+    {
+      "description": "Features, explainers and ranked lists — the best films and shows, endings explained, and the stories behind the stories.",
+      "name": "Features & Lists",
+      "slug": "features-lists"
+    },
+    {
+      "description": "The latest trailers and videos, with the context that matters — what is coming, when, and why everyone is watching.",
+      "name": "Trailers & Videos",
+      "slug": "trailers-videos"
+    }
+  ],
+  "hubs": {
+    "curation": [
+      {
+        "name": "Popular",
+        "slug": "popular"
+      },
+      {
+        "name": "Trending",
+        "slug": "trending"
+      }
+    ],
+    "franchises": [
+      {
+        "name": "Marvel",
+        "slug": "marvel"
+      },
+      {
+        "name": "DC",
+        "slug": "dc"
+      },
+      {
+        "name": "Star Wars",
+        "slug": "star-wars"
+      },
+      {
+        "name": "Star Trek",
+        "slug": "star-trek"
+      },
+      {
+        "name": "Doctor Who",
+        "slug": "doctor-who"
+      },
+      {
+        "name": "Harry Potter",
+        "slug": "harry-potter"
+      },
+      {
+        "name": "The Lord of the Rings",
+        "slug": "lord-of-the-rings"
+      },
+      {
+        "name": "James Bond",
+        "slug": "james-bond"
+      }
+    ],
+    "platforms": [
+      {
+        "name": "Netflix",
+        "slug": "netflix"
+      },
+      {
+        "name": "Prime Video",
+        "slug": "prime-video"
+      },
+      {
+        "name": "Disney+",
+        "slug": "disney-plus"
+      },
+      {
+        "name": "Apple TV+",
+        "slug": "apple-tv-plus"
+      },
+      {
+        "name": "Paramount+",
+        "slug": "paramount-plus"
+      },
+      {
+        "name": "NOW",
+        "slug": "now-tv"
+      },
+      {
+        "name": "BBC iPlayer",
+        "slug": "bbc-iplayer"
+      },
+      {
+        "name": "ITVX",
+        "slug": "itvx"
+      }
+    ]
+  },
+  "locales": {
+    "admin": "en_US",
+    "force_admin": true,
+    "public": "en_GB"
+  },
+  "nav": {
+    "primary_categories": 6
+  },
+  "slugs": {
+    "about": "about",
+    "contact": "contact",
+    "cookies": "cookie-policy",
+    "corrections": "corrections",
+    "editorial": "editorial-policy",
+    "privacy": "privacy-policy",
+    "terms": "terms"
+  },
+  "writer": {
+    "bio": "Storyline UK is written by UK entertainment writers and lifelong fans: film and TV journalists who follow the release calendars, the streaming charts and the award races — and who always label a rumour as a rumour.",
+    "email": "daseknahri@gmail.com",
+    "name": "Storyline UK Team",
+    "photo": "storyline-uk-icon.png",
+    "social": {
+      "facebook": "",
+      "instagram": "",
+      "tiktok": "",
+      "x": "",
+      "youtube": ""
+    }
+  }
+}
