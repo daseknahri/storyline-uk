@@ -24,7 +24,7 @@
   --measure:680px;
   color-scheme:dark;
   /* Category colours, one per pillar (fixed slugs set by the seed) */
-  --mood-movie:#E8A33D; --mood-tv:#4EA8DE; --mood-streaming:#FF5A6E; --mood-celebrity:#C77DBB; --mood-features:#3FA7A0; --mood-trailers:#E2703A;
+  --mood-crime:#D7263D; --mood-survival:#3FA7A0; --mood-unsolved:#4EA8DE; --mood-people:#C77DBB; --mood-history:#E8A33D; --mood-strange:#FF5A6E;
 }
 
 /* ===== Display type: Anton headlines (BRAND.md) ===== */
@@ -55,12 +55,12 @@ body{font-family:var(--sans)}
 
 /* Category-coloured chips */
 .content-chip,.topic-tile{--mood:var(--olive)}
-.cat-movie-news,.category-movie-news{--mood:var(--mood-movie)}
-.cat-tv-news,.category-tv-news{--mood:var(--mood-tv)}
-.cat-streaming,.category-streaming{--mood:var(--mood-streaming)}
-.cat-celebrity-news,.category-celebrity-news{--mood:var(--mood-celebrity)}
-.cat-features-lists,.category-features-lists{--mood:var(--mood-features)}
-.cat-trailers-videos,.category-trailers-videos{--mood:var(--mood-trailers)}
+.cat-true-crime,.category-true-crime{--mood:var(--mood-crime)}
+.cat-survival-stories,.category-survival-stories{--mood:var(--mood-survival)}
+.cat-unsolved-mysteries,.category-unsolved-mysteries{--mood:var(--mood-unsolved)}
+.cat-incredible-people,.category-incredible-people{--mood:var(--mood-people)}
+.cat-historical-stories,.category-historical-stories{--mood:var(--mood-history)}
+.cat-strange-but-true,.category-strange-but-true{--mood:var(--mood-strange)}
 .post-card .content-chip{background:color-mix(in srgb,var(--mood) 12%,transparent);color:var(--mood);border-radius:999px;padding:.2em .7em;font-weight:600;font-size:.78rem}
 
 /* Cards: bigger, tappable, title-first for scrolling thumbs */

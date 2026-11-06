@@ -1,7 +1,8 @@
 <?php
 /**
  * UNTITLED UK STORY SITE (theme slug "storyline-uk") — child theme of Viral Reader for a UK
- * entertainment news site (movies, TV, streaming, celebrity), read mostly from social feeds
+ * true-story site (true crime, survival stories, unsolved mysteries, incredible people,
+ * historical stories, strange-but-true events), read mostly from social feeds
  * on phones. PLACEHOLDER BRAND: the working title lives in content/site-profile.json; when
  * the owner picks the real brand it is applied in one pass (this file's strings included).
  *
@@ -15,7 +16,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'UK_VERSION', '1.0.2' );
+define( 'UK_VERSION', '1.0.3' );
 define( 'UK_HERO_SIZES', '(max-width:1200px) 100vw, 1200px' );
 
 function uk_asset( $rel ) {
@@ -156,7 +157,7 @@ add_filter( 'the_content', function ( $content ) {
 	$out    .= '<button type="button" role="menuitem" data-uk-copy>Copy link</button>';
 	$out    .= '</span></span>';
 	$out .= '</div>';
-	$out .= '<p class="uk-follow">More movie, TV and streaming stories — start with what is <a href="' . esc_url( home_url( '/category/streaming/' ) ) . '">hot on streaming</a>.</p>';
+	$out .= '<p class="uk-follow">More true stories, told in full — start with <a href="' . esc_url( home_url( '/category/true-crime/' ) ) . '">true crime</a>.</p>';
 	$out .= '</aside>';
 
 	/* Share-more behaviour (printed once per page). */
@@ -180,7 +181,7 @@ add_filter( 'the_content', function ( $content ) {
 		if ( $thumb ) { $out .= '<img src="' . esc_url( $thumb ) . '" alt="" width="120" height="120" loading="lazy">'; }
 		$out .= '<span><span class="uk-next__eyebrow">Next article ' . uk_icon( 'arrow' ) . '</span><span class="uk-next__title">' . esc_html( get_the_title( $next ) ) . '</span></span></a>';
 	}
-	$out .= '<p class="uk-note">' . esc_html( get_bloginfo( 'name' ) ) . ' is an independent entertainment publication. Film, programme and platform names belong to their respective owners; rumours are labelled as rumours.</p>';
+	$out .= '<p class="uk-note">' . esc_html( get_bloginfo( 'name' ) ) . ' is an independent true-story publication. Names and trademarks belong to their respective owners; theories are labelled as theories.</p>';
 	return $content . $out;
 }, 30 );
 
@@ -220,7 +221,7 @@ add_action( 'wp_head', function () {
 	if ( is_singular( 'post' ) ) { return; }
 	$title = is_front_page() ? get_bloginfo( 'name' ) . ' – ' . get_bloginfo( 'description' ) : wp_get_document_title();
 	$desc  = is_category() ? wp_strip_all_tags( category_description() ) : '';
-	if ( '' === $desc ) { $desc = 'Movie news, TV news, streaming charts and celebrity stories for UK readers.'; }
+	if ( '' === $desc ) { $desc = 'True crime, survival stories, unsolved mysteries and the strangest true events — told in full, for people who love to read.'; }
 	$url = is_front_page() ? home_url( '/' ) : ( is_category() ? get_category_link( get_queried_object_id() ) : get_permalink() );
 	echo '<meta property="og:type" content="website">' . "\n";
 	echo '<meta property="og:site_name" content="' . esc_attr( get_bloginfo( 'name' ) ) . '">' . "\n";
@@ -343,7 +344,7 @@ function uk_home_intro() {
 	echo '<section class="uk-intro" aria-label="About this site"><div class="vr-container uk-intro__in">';
 	echo '<img class="uk-intro__img" src="' . esc_url( uk_asset( 'brand/icon-192.webp' ) ) . '" alt="" width="64" height="64" loading="lazy" decoding="async">';
 	echo '<div class="uk-intro__t"><p class="uk-intro__h">' . esc_html( get_bloginfo( 'name' ) ) . '</p>';
-	echo '<p class="uk-intro__s">Movie news, TV news, streaming charts and celebrity stories for UK readers — plus the features and lists worth your time. <a href="' . esc_url( home_url( '/about/' ) ) . '">More about us</a>.</p></div>';
+	echo '<p class="uk-intro__s">True crime, survival stories, unsolved mysteries, incredible people, historical stories and strange-but-true events — told in full, for people who love to read. <a href="' . esc_url( home_url( '/about/' ) ) . '">More about us</a>.</p></div>';
 	echo '</div></section>';
 }
 
