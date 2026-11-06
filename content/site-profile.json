@@ -1,18 +1,19 @@
 {
   "_facts": {
     "category_ids": {
-      "celebrity-news": 5,
-      "features-lists": 6,
       "general": 1,
-      "movie-news": 2,
-      "streaming": 4,
-      "trailers-videos": 7,
-      "tv-news": 3
+      "historical-stories": 32,
+      "incredible-people": 31,
+      "strange-but-true": 33,
+      "survival-stories": 29,
+      "true-crime": 28,
+      "unsolved-mysteries": 30
     },
-    "default_category_id": 2,
-    "hub_tags_seeded": 18,
+    "default_category_id": 28,
+    "hub_tags_seeded": 8,
     "local_url": "http://localhost:8097",
     "qa": "2026-11-06 local compose QA PASS: home + 6 category archives + 7 trust pages all 200; ads.txt exact; homepage JSON-LD present and parses; storyline-uk 1.0.0 active on viral-reader 1.9.37; build-v9 9.48.0; Europe/London; en_GB; seed log clean; 0 posts (nothing invented)",
+    "retuned": "2026-11-06 (owner-approved pivot): entertainment pillars deleted live, true-story pillars/tags created; live category IDs 28-33, tag IDs 34-39 recorded here; tagline, About and trust-page copy retuned in seed.php; UK_SEED_VERSION bumped to 2.",
     "seeded_locally": "2026-11-06",
     "trust_pages": 7
   },
@@ -22,7 +23,7 @@
     "wordmark": "storyline-uk-logo"
   },
   "brand": {
-    "description": "UK entertainment news: movie news, TV news, streaming charts and launches, celebrity news, features and lists, and trailers & videos — UK release dates, UK availability and UK broadcast times, in British English.",
+    "description": "UK true stories, told in full: true crime, survival stories, unsolved mysteries, incredible people, historical stories and strange-but-true events — researched from documentary reporting and reputable sources, and written for people who love to read, in British English.",
     "name": "Storyline UK",
     "site_email": "daseknahri@gmail.com",
     "social": {
@@ -32,38 +33,38 @@
       "x": "",
       "youtube": ""
     },
-    "tagline": "Movies · TV · Streaming · Celebrity"
+    "tagline": "True stories, told in full — crime, survival, mysteries and the strangest true events, written for people who love to read."
   },
   "categories": [
     {
-      "description": "Movie news for UK readers: casting, release dates, trailers and box office — the films everyone will be talking about.",
-      "name": "Movie News",
-      "slug": "movie-news"
+      "description": "Real cases, told in full: the investigation, the trial, and the people caught in between.",
+      "name": "True Crime",
+      "slug": "true-crime"
     },
     {
-      "description": "TV news: renewals, cancellations, casting and finale coverage from the shows Britain is watching.",
-      "name": "TV News",
-      "slug": "tv-news"
+      "description": "Against-the-odds true stories of people who lived through the impossible.",
+      "name": "Survival Stories",
+      "slug": "survival-stories"
     },
     {
-      "description": "What is new and what is number one on Netflix, Prime Video, Disney+ and more — streaming news and the weekly charts.",
-      "name": "Streaming",
-      "slug": "streaming"
+      "description": "Cases the evidence never quite closed — told straight, theories labelled.",
+      "name": "Unsolved Mysteries",
+      "slug": "unsolved-mysteries"
     },
     {
-      "description": "Celebrity news, reported carefully: confirmed stories about the stars of film and TV — rumours labelled as rumours.",
-      "name": "Celebrity News",
-      "slug": "celebrity-news"
+      "description": "Extraordinary lives and the humans behind the headlines.",
+      "name": "Incredible People",
+      "slug": "incredible-people"
     },
     {
-      "description": "Features, explainers and ranked lists — the best films and shows, endings explained, and the stories behind the stories.",
-      "name": "Features & Lists",
-      "slug": "features-lists"
+      "description": "True stories from history, retold for readers: crimes, escapes, chases and turning points.",
+      "name": "Historical Stories",
+      "slug": "historical-stories"
     },
     {
-      "description": "The latest trailers and videos, with the context that matters — what is coming, when, and why everyone is watching.",
-      "name": "Trailers & Videos",
-      "slug": "trailers-videos"
+      "description": "Verified events stranger than fiction — medical mysteries, bizarre coincidences, the unexplained.",
+      "name": "Strange But True",
+      "slug": "strange-but-true"
     }
   ],
   "hubs": {
@@ -77,72 +78,30 @@
         "slug": "trending"
       }
     ],
-    "franchises": [
+    "topics": [
       {
-        "name": "Marvel",
-        "slug": "marvel"
+        "name": "Missing Persons",
+        "slug": "missing-persons"
       },
       {
-        "name": "DC",
-        "slug": "dc"
+        "name": "Cold Cases",
+        "slug": "cold-cases"
       },
       {
-        "name": "Star Wars",
-        "slug": "star-wars"
+        "name": "Sea Survival",
+        "slug": "sea-survival"
       },
       {
-        "name": "Star Trek",
-        "slug": "star-trek"
+        "name": "Famous Trials",
+        "slug": "famous-trials"
       },
       {
-        "name": "Doctor Who",
-        "slug": "doctor-who"
+        "name": "Medical Mysteries",
+        "slug": "medical-mysteries"
       },
       {
-        "name": "Harry Potter",
-        "slug": "harry-potter"
-      },
-      {
-        "name": "The Lord of the Rings",
-        "slug": "lord-of-the-rings"
-      },
-      {
-        "name": "James Bond",
-        "slug": "james-bond"
-      }
-    ],
-    "platforms": [
-      {
-        "name": "Netflix",
-        "slug": "netflix"
-      },
-      {
-        "name": "Prime Video",
-        "slug": "prime-video"
-      },
-      {
-        "name": "Disney+",
-        "slug": "disney-plus"
-      },
-      {
-        "name": "Apple TV+",
-        "slug": "apple-tv-plus"
-      },
-      {
-        "name": "Paramount+",
-        "slug": "paramount-plus"
-      },
-      {
-        "name": "NOW",
-        "slug": "now-tv"
-      },
-      {
-        "name": "BBC iPlayer",
-        "slug": "bbc-iplayer"
-      },
-      {
-        "name": "ITVX",
-        "slug": "itvx"
+        "name": "Caught by Technology",
+        "slug": "caught-by-technology"
       }
     ]
   },
@@ -164,7 +123,7 @@
     "terms": "terms"
   },
   "writer": {
-    "bio": "Storyline UK is written by UK entertainment writers and lifelong fans: film and TV journalists who follow the release calendars, the streaming charts and the award races — and who always label a rumour as a rumour.",
+    "bio": "Storyline UK is written by researchers and storytellers who dig into documentary reporting, court records and reputable case coverage — and who always label a theory as a theory and never invent a detail.",
     "email": "daseknahri@gmail.com",
     "name": "Storyline UK Team",
     "photo": "storyline-uk-icon.png",

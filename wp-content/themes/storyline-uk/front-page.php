@@ -6,7 +6,7 @@
  * this template mirrors that anatomy on viral-reader's card system:
  *   hero (newest story — or the brand hero while the site has no posts)
  *   → Popular rail (editorial `popular` tag) → Trending rail (`trending` tag, text rows)
- *   → Hot on Streaming (Streaming category) → Features rail (Features & Lists category)
+ *   → Unsolved Mysteries rail → Historical Stories rail
  *   → topic band (the six pillars) → Latest grid + pagination.
  * Every rail renders ONLY when it has posts, so at launch (zero posts) the page is
  * hero + topic band + Latest heading — graceful, never broken-looking.
@@ -46,7 +46,7 @@ elseif ( function_exists( 'vr_hero_image_url' ) && vr_hero_image_url() ) :
 		<div class="vr-container home-hero__in">
 			<p class="home-hero__eyebrow"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
 			<h1 class="home-hero__title"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h1>
-			<p class="home-hero__sub"><?php esc_html_e( 'Movie news, TV news, streaming charts and celebrity stories for UK readers — the first stories are on their way.', 'storyline-uk' ); ?></p>
+			<p class="home-hero__sub"><?php esc_html_e( 'True crime, survival stories, unsolved mysteries and the strangest true events — told in full, for people who love to read.', 'storyline-uk' ); ?></p>
 			<a class="vr-btn" href="#explore"><?php esc_html_e( 'Explore the topics', 'storyline-uk' ); ?></a>
 		</div>
 	</section>
@@ -117,13 +117,13 @@ if ( ! is_paged() && $uk_hero ) :
 	endif;
 	wp_reset_postdata();
 
-	/* Hot on Streaming — the Streaming pillar; the card excerpt reads as the verdict line. */
-	$uk_rail( __( 'Charts & launches', 'storyline-uk' ), __( 'Hot on streaming', 'storyline-uk' ), $uk_link( 'streaming', 'category' ),
-		new WP_Query( array( 'category_name' => 'streaming', 'posts_per_page' => 3, 'post__not_in' => array( $uk_hero_id ), 'ignore_sticky_posts' => true, 'no_found_rows' => true ) ) );
+	/* Unsolved Mysteries — the cases the evidence never quite closed. */
+	$uk_rail( __( 'Still unsolved', 'storyline-uk' ), __( 'Unsolved mysteries', 'storyline-uk' ), $uk_link( 'unsolved-mysteries', 'category' ),
+		new WP_Query( array( 'category_name' => 'unsolved-mysteries', 'posts_per_page' => 3, 'post__not_in' => array( $uk_hero_id ), 'ignore_sticky_posts' => true, 'no_found_rows' => true ) ) );
 
-	/* Features — Features & Lists pillar. */
-	$uk_rail( __( 'Deep dives', 'storyline-uk' ), __( 'Features & lists', 'storyline-uk' ), $uk_link( 'features-lists', 'category' ),
-		new WP_Query( array( 'category_name' => 'features-lists', 'posts_per_page' => 4, 'post__not_in' => array( $uk_hero_id ), 'ignore_sticky_posts' => true, 'no_found_rows' => true ) ) );
+	/* Historical Stories — true stories from history, retold for readers. */
+	$uk_rail( __( 'Deep dives', 'storyline-uk' ), __( 'Stories from history', 'storyline-uk' ), $uk_link( 'historical-stories', 'category' ),
+		new WP_Query( array( 'category_name' => 'historical-stories', 'posts_per_page' => 4, 'post__not_in' => array( $uk_hero_id ), 'ignore_sticky_posts' => true, 'no_found_rows' => true ) ) );
 
 endif;
 

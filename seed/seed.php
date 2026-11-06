@@ -13,10 +13,10 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-const UK_SEED_VERSION = 1;
+const UK_SEED_VERSION = 2;
 const UK_DATA         = '/opt/site/data';
 const UK_BRAND_DIR    = WP_CONTENT_DIR . '/themes/storyline-uk/assets/brand';
-const UK_AUTHOR_BIO   = 'Storyline UK is written by UK entertainment writers and lifelong fans: film and TV journalists who follow the release calendars, the streaming charts and the award races — and who always label a rumour as a rumour.';
+const UK_AUTHOR_BIO   = 'Storyline UK is written by researchers and storytellers who dig into documentary reporting, court records and reputable case coverage — and who always label a theory as a theory and never invent a detail.';
 
 require_once ABSPATH . 'wp-admin/includes/media.php';
 require_once ABSPATH . 'wp-admin/includes/file.php';
@@ -88,16 +88,16 @@ function uk_categories() {
 		return $out;
 	}
 	return array(
-		'movie-news'      => array( 'Movie News', 'Movie news for UK readers: casting, release dates, trailers and box office — the films everyone will be talking about.' ),
-		'tv-news'         => array( 'TV News', 'TV news: renewals, cancellations, casting and finale coverage from the shows Britain is watching.' ),
-		'streaming'       => array( 'Streaming', 'What is new and what is number one on Netflix, Prime Video, Disney+ and more — streaming news and the weekly charts.' ),
-		'celebrity-news'  => array( 'Celebrity News', 'Celebrity news, reported carefully: confirmed stories about the stars of film and TV — rumours labelled as rumours.' ),
-		'features-lists'  => array( 'Features & Lists', 'Features, explainers and ranked lists — the best films and shows, endings explained, and the stories behind the stories.' ),
-		'trailers-videos' => array( 'Trailers & Videos', 'The latest trailers and videos, with the context that matters — what is coming, when, and why everyone is watching.' ),
+		'true-crime'         => array( 'True Crime', 'Real cases, told in full: the investigation, the trial, and the people caught in between.' ),
+		'survival-stories'   => array( 'Survival Stories', 'Against-the-odds true stories of people who lived through the impossible.' ),
+		'unsolved-mysteries' => array( 'Unsolved Mysteries', 'Cases the evidence never quite closed — told straight, theories labelled.' ),
+		'incredible-people'  => array( 'Incredible People', 'Extraordinary lives and the humans behind the headlines.' ),
+		'historical-stories' => array( 'Historical Stories', 'True stories from history, retold for readers: crimes, escapes, chases and turning points.' ),
+		'strange-but-true'   => array( 'Strange But True', 'Verified events stranger than fiction — medical mysteries, bizarre coincidences, the unexplained.' ),
 	);
 }
 
-/* Two-axis taxonomy, axis 2 (REA spec §4.4): tags are franchise / platform hubs. They are
+/* Two-axis taxonomy, axis 2: tags are story hubs (case types and themes). They are
    seeded EMPTY — a hub earns its archive by being filed on stories; the stack's
    thin-archives noindex keeps empty hubs out of the index until they carry posts.
    'popular' and 'trending' are the editorial curation tags the homepage rails read. */
@@ -122,7 +122,7 @@ function uk_hubs() {
 function uk_seed_site() {
 	$p    = uk_profile();
 	$name = (string) ( $p['brand']['name'] ?? 'Storyline UK' );
-	$tag  = (string) ( $p['brand']['tagline'] ?? 'Movie News · TV News · Streaming · Celebrity' );
+	$tag  = (string) ( $p['brand']['tagline'] ?? 'True stories, told in full' );
 	$mail = uk_site_email();
 
 	update_option( 'blogname', $name );
@@ -163,7 +163,7 @@ function uk_seed_site() {
 		if ( $t ) { wp_update_term( $t->term_id, 'category', array( 'name' => $c[0], 'slug' => $slug, 'description' => $c[1] ) ); }
 		else { wp_insert_term( $c[0], 'category', array( 'slug' => $slug, 'description' => $c[1] ) ); }
 	}
-	$news = get_term_by( 'slug', 'movie-news', 'category' );
+	$news = get_term_by( 'slug', 'true-crime', 'category' );
 	if ( $news ) { update_option( 'default_category', (int) $news->term_id ); }
 	$uncat = get_term_by( 'slug', 'uncategorized', 'category' );
 	if ( $uncat ) { wp_update_term( $uncat->term_id, 'category', array( 'name' => 'General', 'slug' => 'general' ) ); }
@@ -175,10 +175,10 @@ function uk_seed_site() {
 
 	/* Pages — trust/legal set for an SEO + AdSense-approval site (UK). */
 	uk_page( 'about', 'About',
-		'<p><strong>' . esc_html( $name ) . '</strong> is a UK entertainment publication covering the films, programmes and streaming hits Britain is watching: <strong>movie news</strong>, <strong>TV news</strong>, <strong>streaming</strong> charts and launches, <strong>celebrity news</strong>, <strong>features and lists</strong>, and the <strong>trailers and videos</strong> everyone is sharing.</p>'
-		. '<p>We write for readers in the UK: UK release dates, UK streaming availability and UK broadcast times, in plain British English. When a film or show lands somewhere else first, we say so — and we tell you when it reaches the UK.</p>'
-		. '<h2>How we work</h2><p>Our stories start from official sources: studio and streamer announcements, broadcaster press offices, published release calendars and interviews given by cast and creators. Where a story is reported first by another reputable outlet, we credit it and link to it. Anything unconfirmed is labelled a rumour — see our <a href="/editorial-policy/">Editorial Policy</a>.</p>'
-		. '<h2>Independent publication</h2><p>' . esc_html( $name ) . ' is an independent publication. We are not affiliated with any studio, broadcaster or streaming platform. All film, programme and platform names belong to their respective owners.</p>'
+		'<p><strong>' . esc_html( $name ) . '</strong> tells true stories the long way: the way they deserve. Every story is researched from documentary reporting and reputable sources, and written in our own words as a complete read — what happened, how it unfolded, and how it ended. Where a case is unsolved or a claim is unproven, we say so. No invented quotes, no made-up details: just true stories, told in full.</p>'
+		. '<p>Our pillars are <strong>true crime</strong>, <strong>survival stories</strong>, <strong>unsolved mysteries</strong>, <strong>incredible people</strong>, <strong>historical stories</strong> and <strong>strange but true</strong> events — long reads, written for people who love to read.</p>'
+		. '<h2>How we work</h2><p>Our stories start from documentary reporting, court records, official reviews and reputable case coverage. Where a documentary or channel told a story first, we credit it and embed or link the original. Anything unproven is labelled a theory — see our <a href="/editorial-policy/">Editorial Policy</a>.</p>'
+		. '<h2>Independent publication</h2><p>' . esc_html( $name ) . ' is an independent publication. We are not affiliated with any broadcaster, channel or publisher. Names and trademarks belong to their respective owners.</p>'
 		. '<p>Questions, corrections or a tip? Head to the <a href="/contact/">Contact</a> page.</p>' );
 	uk_page( 'contact', 'Contact',
 		'<p>Got a question about a story, spotted a mistake, or have a tip you want us to check? We read every message.</p>'
@@ -199,24 +199,24 @@ function uk_seed_site() {
 		'<p>By accessing or using ' . esc_html( $name ) . ' (the "Site"), you agree to these Terms. If you do not agree, please do not use the Site.</p>'
 		. '<h2>Acceptable use</h2><p>You agree to use the Site for lawful, personal purposes only. You may not damage, disable or impair the Site, interfere with other visitors, attempt unauthorised access, or scrape or harvest content with automated tools without our permission.</p>'
 		. '<h2>Intellectual property</h2><p>Unless otherwise noted, the articles, text and design on the Site are owned by ' . esc_html( $name ) . ' and protected by copyright. Enjoy them for personal use; do not copy, republish or use them commercially without prior written permission. Film, programme, character and platform names and imagery belong to their respective owners; the Site is an independent publication and claims no ownership of them. Video embedded on the Site is hosted by the platform that published it (for example YouTube) and remains that platform\'s and its uploader\'s content.</p>'
-		. '<h2>Commentary and fair dealing</h2><p>The Site publishes original news reporting, commentary and criticism about films and television programmes. References to programmes, characters and storylines are made for the purposes of reporting and review. If you believe any content infringes your rights, contact us and we will review it promptly.</p>'
-		. '<h2>No warranty</h2><p>The Site and its content are provided "as is" and "as available" without warranties of any kind. We work hard to keep news accurate and clearly labelled, but we do not guarantee that content is complete, current or error-free; release dates, schedules and streaming catalogues can change.</p>'
+		. '<h2>Commentary and fair dealing</h2><p>The Site publishes original storytelling, reporting and commentary about real cases, documentaries and historical events. References to cases, programmes and people are made for the purposes of reporting and review. If you believe any content infringes your rights, contact us and we will review it promptly.</p>'
+		. '<h2>No warranty</h2><p>The Site and its content are provided "as is" and "as available" without warranties of any kind. We work hard to keep our stories accurate and clearly labelled, but we do not guarantee that content is complete, current or error-free; case details and historical records can be revised as new evidence emerges.</p>'
 		. '<h2>Limitation of liability</h2><p>To the fullest extent permitted by law, ' . esc_html( $name ) . ' will not be liable for any loss or damage arising from your use of the Site or reliance on its content.</p>'
 		. '<h2>External links</h2><p>The Site may link to third-party websites we do not control. We are not responsible for their content or practices.</p>'
 		. '<h2>Changes</h2><p>We may update these Terms from time to time; changes take effect once posted on this page.</p>' );
 	uk_page( 'editorial-policy', 'Editorial Policy',
 		'<p>This page explains how ' . esc_html( $name ) . ' creates its content and the standards we hold it to.</p>'
-		. '<h2>What we publish</h2><p>Entertainment news and features for UK readers: movie and TV news, streaming launches and weekly charts, celebrity news, explainers, endings explained, ranked lists, and trailer coverage.</p>'
-		. '<h2>Sourcing</h2><p>Confirmed stories are based on official studio, streamer and broadcaster announcements, published release calendars and listings, and interviews given by cast and creators. Where a reputable outlet reported a story first, we credit it in the article and link to the original report. Trailers and videos are embedded from the official channel or rights holder wherever one exists.</p>'
-		. '<h2>Rumours and reporting on real people</h2><p>Entertainment news moves fast, and not everything circulating is true. Stories without official confirmation are always labelled as rumours in the headline or first paragraph, and we never present a rumour, a fan theory or our own speculation as fact. We take particular care with stories about real people: we do not publish unverified claims about anyone\'s private life, health or relationships, and we never fabricate quotes.</p>'
+		. '<h2>What we publish</h2><p>True stories, told in full, for UK readers: real crime cases, survival stories, unsolved mysteries, extraordinary lives, historical stories and verified strange-but-true events — written as long-form reads.</p>'
+		. '<h2>Sourcing</h2><p>Confirmed stories are based on documentary reporting, court records, official reviews and reputable case coverage. Where a documentary or channel told a story first, we credit it in the article and embed or link the original. Videos are embedded from the channel that published them wherever one exists.</p>'
+		. '<h2>Theories and reporting on real people</h2><p>True-story reporting deals in cases that are sometimes unsolved and claims that are sometimes unproven. A theory is always labelled as a theory in the text, and we never present speculation as fact. We take particular care with stories about real people: we do not publish unverified claims about anyone\'s private life, and we never fabricate quotes or details.</p>'
 		. '<h2>Independence</h2><p>Our coverage reflects our own honest judgement. Advertising funds the Site but never buys coverage, and we do not publish paid or sponsored content disguised as editorial. Any commercial relationship would be disclosed clearly.</p>'
 		. '<h2>Corrections</h2><p>If we get something wrong, we fix it promptly and, where the error was material, note the correction in the article. See our <a href="/corrections/">Corrections</a> page, or report an error via the <a href="/contact/">Contact</a> page.</p>'
 		. '<h2>Images</h2><p>Our brand artwork is original. Article imagery is original or properly licensed; we do not lift publicity stills, screenshots or video frames and pass them off as our own.</p>' );
 	uk_page( 'corrections', 'Corrections',
 		'<p>We aim for accuracy in everything we publish. When we get something wrong, this page explains how we put it right.</p>'
-		. '<h2>How to report an error</h2><p>Email us via the <a href="/contact/">Contact</a> page with the link to the article and a note of what looks wrong. Reports from readers, studios and representatives are all read and checked against our sources.</p>'
-		. '<h2>How we correct</h2><ul><li><strong>Minor errors</strong> (typos, a wrong date in a listing, a misspelt name) are fixed in place as soon as they are confirmed.</li><li><strong>Material errors</strong> (a wrong fact a reader might rely on — a release date, a casting, a chart position) are fixed in place and noted at the foot of the article with the date of the correction.</li><li><strong>Stories that turn out to be wrong</strong> are updated prominently, and where a story should not have been published at all, it is removed and the removal is acknowledged.</li></ul>'
-		. '<h2>Updates vs corrections</h2><p>Entertainment stories develop: a release date moves, a rumour is confirmed, a chart is revised. Developing stories are updated with the new information and an "Updated" timestamp — that is an update, not a correction, and the article history stays visible in the text.</p>' );
+		. '<h2>How to report an error</h2><p>Email us via the <a href="/contact/">Contact</a> page with the link to the article and a note of what looks wrong. Reports from readers, researchers and representatives are all read and checked against our sources.</p>'
+		. '<h2>How we correct</h2><ul><li><strong>Minor errors</strong> (typos, a wrong date, a misspelt name) are fixed in place as soon as they are confirmed.</li><li><strong>Material errors</strong> (a wrong fact a reader might rely on — a date, a name, a verdict) are fixed in place and noted at the foot of the article with the date of the correction.</li><li><strong>Stories that turn out to be wrong</strong> are updated prominently, and where a story should not have been published at all, it is removed and the removal is acknowledged.</li></ul>'
+		. '<h2>Updates vs corrections</h2><p>True stories develop: a cold case is reopened, a theory is disproved, an official review reports. Developing stories are updated with the new information and an "Updated" timestamp — that is an update, not a correction, and the article history stays visible in the text.</p>' );
 	uk_page( 'cookie-policy', 'Cookie Policy',
 		'<p>This Cookie Policy explains how ' . esc_html( $name ) . ' uses cookies and similar technologies. It should be read alongside our <a href="/privacy-policy/">Privacy Policy</a>.</p>'
 		. '<h2>What cookies are</h2><p>Cookies are small text files stored on your device when you visit a website. They help sites function, remember preferences and understand how pages are used. Similar technologies include web beacons and pixels. Cookies may be set by us (first-party) or by third parties whose services we use.</p>'

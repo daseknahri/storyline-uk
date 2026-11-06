@@ -1,20 +1,26 @@
 Storyline UK — site profile (human-readable twin of content/site-profile.json)
 
 Name:        Storyline UK
-Tagline:     Movies · TV · Streaming · Celebrity
-Domain:      storylineuk.getemoji.site (PLANNED — free getemoji.site subdomain, Dales pattern;
-             NOT registered/configured yet; launch steps are owner-gated)
-Market:      UK — en_GB, Europe/London, British English, UK release dates/availability
+Tagline:     True stories, told in full — crime, survival, mysteries and the strangest
+             true events, written for people who love to read.
+Domain:      storylineuk.getemoji.site — LIVE since 2026-11-06 (free getemoji.site
+             subdomain, Dales pattern; GitHub daseknahri/storyline-uk)
+Market:      UK — en_GB, Europe/London, British English
 Byline:      Storyline UK Team (editorial team identity — no invented persona)
 Contact:     daseknahri@gmail.com
 
-Pillars (categories, publish by numeric ID once seeded):
-  Movie News · TV News · Streaming · Celebrity News · Features & Lists · Trailers & Videos
+PIVOT (2026-11-06, owner-approved): entertainment news → TRUE STORIES, long-form
+narratives researched from documentary reporting / true-story channels, written
+for people who love to read. The entertainment pillars below were deleted live
+and in the profile the same day; this file reflects the retuned site.
 
-Taxonomy axis 2 (tag hubs, seeded empty): Netflix, Prime Video, Disney+, Apple TV+,
-  Paramount+, NOW, BBC iPlayer, ITVX · Marvel, DC, Star Wars, Star Trek, Doctor Who,
-  Harry Potter, The Lord of the Rings, James Bond · curation tags: Popular, Trending
-  (the homepage Popular/Trending rails read the curation tags)
+Pillars (categories, publish by numeric ID):
+  28 True Crime · 29 Survival Stories · 30 Unsolved Mysteries ·
+  31 Incredible People · 32 Historical Stories · 33 Strange But True
+
+Taxonomy axis 2 (tag hubs, seeded empty): Missing Persons, Cold Cases, Sea Survival,
+  Famous Trials, Medical Mysteries, Caught by Technology · curation tags: Popular,
+  Trending (the homepage Popular/Trending rails read the curation tags)
 
 Trust pages: About · Contact · Privacy Policy · Terms · Cookie Policy ·
   Editorial Policy · Corrections
@@ -23,6 +29,6 @@ Brand: brand/BRAND.md — cinema noir + carpet red #D7263D + premiere gold #E8A3
   Anton headlines, clapper/play mark. Art is original generated imagery only.
 
 Stack: build-v9 9.48.0 + viral-reader 1.9.37 (vendored from plgin main) +
-  storyline-uk child theme 1.0.0; self-seeding Docker (germ pattern).
+  storyline-uk child theme 1.0.2; self-seeding Docker (germ pattern).
 Monetisation: AdSense getemoji-family publisher pub-6869205417923902, stage 1
   (ads.txt served, ADSENSE_ENABLE=0, GA off) until the owner approves stage 2.

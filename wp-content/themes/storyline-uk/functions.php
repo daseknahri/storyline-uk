@@ -15,7 +15,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'UK_VERSION', '1.0.1' );
+define( 'UK_VERSION', '1.0.2' );
 define( 'UK_HERO_SIZES', '(max-width:1200px) 100vw, 1200px' );
 
 function uk_asset( $rel ) {

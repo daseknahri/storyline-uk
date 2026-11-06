@@ -1,1 +1,32 @@
-[{"description":"Movie news for UK readers: casting, release dates, trailers and box office — the films everyone will be talking about.","name":"Movie News","slug":"movie-news"},{"description":"TV news: renewals, cancellations, casting and finale coverage from the shows Britain is watching.","name":"TV News","slug":"tv-news"},{"description":"What is new and what is number one on Netflix, Prime Video, Disney+ and more — streaming news and the weekly charts.","name":"Streaming","slug":"streaming"},{"description":"Celebrity news, reported carefully: confirmed stories about the stars of film and TV — rumours labelled as rumours.","name":"Celebrity News","slug":"celebrity-news"},{"description":"Features, explainers and ranked lists — the best films and shows, endings explained, and the stories behind the stories.","name":"Features & Lists","slug":"features-lists"},{"description":"The latest trailers and videos, with the context that matters — what is coming, when, and why everyone is watching.","name":"Trailers & Videos","slug":"trailers-videos"}]
+[
+  {
+    "description": "Real cases, told in full: the investigation, the trial, and the people caught in between.",
+    "name": "True Crime",
+    "slug": "true-crime"
+  },
+  {
+    "description": "Against-the-odds true stories of people who lived through the impossible.",
+    "name": "Survival Stories",
+    "slug": "survival-stories"
+  },
+  {
+    "description": "Cases the evidence never quite closed — told straight, theories labelled.",
+    "name": "Unsolved Mysteries",
+    "slug": "unsolved-mysteries"
+  },
+  {
+    "description": "Extraordinary lives and the humans behind the headlines.",
+    "name": "Incredible People",
+    "slug": "incredible-people"
+  },
+  {
+    "description": "True stories from history, retold for readers: crimes, escapes, chases and turning points.",
+    "name": "Historical Stories",
+    "slug": "historical-stories"
+  },
+  {
+    "description": "Verified events stranger than fiction — medical mysteries, bizarre coincidences, the unexplained.",
+    "name": "Strange But True",
+    "slug": "strange-but-true"
+  }
+]
