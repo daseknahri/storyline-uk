@@ -37,7 +37,20 @@ if ( is_paged() ) :
 	</section>
 	<?php
 elseif ( $uk_hero ) :
-	vr_hero_media( $uk_hero );
+	$uk_hero_cats = get_the_category( $uk_hero->ID );
+	?>
+	<section class="home-hero">
+		<?php vr_hero_media(); ?>
+		<div class="vr-container home-hero__in">
+			<?php if ( ! empty( $uk_hero_cats ) ) : ?>
+				<p class="home-hero__eyebrow"><?php echo esc_html( $uk_hero_cats[0]->name ); ?></p>
+			<?php endif; ?>
+			<h1 class="home-hero__title"><a href="<?php echo esc_url( get_permalink( $uk_hero ) ); ?>"><?php echo esc_html( get_the_title( $uk_hero ) ); ?></a></h1>
+			<p class="home-hero__sub"><?php echo esc_html( wp_strip_all_tags( get_the_excerpt( $uk_hero ) ) ); ?></p>
+			<a class="vr-btn" href="<?php echo esc_url( get_permalink( $uk_hero ) ); ?>"><?php esc_html_e( 'Read the full story', 'storyline-uk' ); ?></a>
+		</div>
+	</section>
+	<?php
 elseif ( function_exists( 'vr_hero_image_url' ) && vr_hero_image_url() ) :
 	/* Standing hero while the site has no articles yet (brand launch state). */
 	?>
